@@ -1,22 +1,7 @@
 <?php
 session_start();
 
-// التحقق مما إذا كان المستخدم قد سجل الدخول
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html"); // إذا لم يكن مسجلاً، يتم نقله إلى صفحة تسجيل الدخول
-    exit();
-}
 
-// جلب بيانات المستخدم من الجلسة
-$user_id = $_SESSION['user_id'];
-$user_name = $_SESSION['user_name'];
-$team_name = $_SESSION['team_name'];
-
-// الاتصال بقاعدة البيانات
-$host = 'fdb1030.awardspace.net';
-$db   = '4584173_seif';
-$user = '4584173_seif';
-$pass = 'Sseeiiff1@';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
